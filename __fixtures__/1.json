@@ -1,0 +1,65 @@
+[
+    {
+      "id": "welcome",
+      "messages": [
+        "Привет! Как я могу помочь вам сегодня?"
+      ],
+      "buttons": [
+        {
+          "text": "Узнать о продукте",
+          "nextStepId": "step2",
+          "type": "productInfo"
+        },
+        {
+          "text": "Задать вопрос",
+          "nextStepId": "step3",
+          "type": "question"
+        }
+      ]
+    },
+    {
+      "id": "step2",
+      "messages": [
+        "Наш продукт - это передовое решение для управления задачами."
+      ],
+      "buttons": [
+        {
+          "text": "Получить демо",
+          "nextStepId": "step4",
+          "type": "demoRequest"
+        },
+        {
+          "text": "Вернуться назад",
+          "nextStepId": "welcome",
+          "type": "back"
+        }
+      ]
+    },
+    {
+      "id": "step3",
+      "messages": [
+        "Пожалуйста, напишите ваш вопрос."
+      ],
+      "buttons": [
+        {
+          "text": "Отмена",
+          "nextStepId": "welcome",
+          "type": "cancel"
+        }
+      ]
+    },
+    {
+      "id": "step4",
+      "messages": [
+        "Спасибо за интерес к нашему продукту! Мы свяжемся с вами для демонстрации."
+      ],
+      "buttons": [
+        {
+          "text": "Закончить разговор",
+          "nextStepId": "welcome",
+          "type": "end"
+        }
+      ]
+    }
+  ]
+
