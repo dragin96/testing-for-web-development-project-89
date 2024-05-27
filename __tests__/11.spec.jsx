@@ -1,10 +1,14 @@
+import React from 'react';
 import { render } from '@testing-library/react';
-import Widget from "@hexlet/chatbot-v2";
-import steps from "@hexlet/chatbot-v2/example-steps";
-import '@hexlet/chatbot-v2/styles';
+import App from "../src/App.jsx";
+import '@testing-library/jest-dom';
 
 describe('Main', () => {
     it('renders main component', () => {
-        render(Widget(steps));
+        const screen1 = render(<App />);
+
+        const widgetElement = screen1.getByText('Открыть Чат');
+        expect(widgetElement).toBeInTheDocument();
+
     });
 });
