@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Widget from "@hexlet/chatbot-v2";
 import steps from "../__fixtures__/1.json";
+import React from "react";
 
 const App = () => {
     const [form, setForm] = useState({
@@ -39,7 +40,7 @@ const App = () => {
     const renderRow = (key) => (
         <tr key={key}>
             <td>{enToRus[key]}</td>
-            <td>{form[key].toString()}</td>
+            <td data-testid={`result_${key}`}>{form[key].toString()}</td>
         </tr>
     );
 
@@ -62,7 +63,7 @@ const App = () => {
     };
 
     const renderForm = () => (
-        <form className="m-3" onSubmit={handleSubmitForm} name="myForm">
+        <form data-testid={'myForm'} className="m-3" onSubmit={handleSubmitForm} name="myForm">
             <div className="col-md-6 mb-3">
                 <label htmlFor="email" className="col-form-label">
                     Email
