@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Widget from "@hexlet/chatbot-v2";
-import steps from "../__fixtures__/1.json";
+import steps from "../__fixtures__/default.json";
 import React from "react";
 
 const App = () => {

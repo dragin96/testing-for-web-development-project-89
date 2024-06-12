@@ -8,12 +8,12 @@
         {
           "text": "Узнать о продукте",
           "nextStepId": "step2",
-          "type": "productInfo"
+          "type": "button"
         },
         {
           "text": "Задать вопрос",
           "nextStepId": "step3",
-          "type": "question"
+          "type": "button"
         }
       ]
     },
@@ -26,12 +26,12 @@
         {
           "text": "Получить демо",
           "nextStepId": "step4",
-          "type": "demoRequest"
+          "type": "button"
         },
         {
           "text": "Вернуться назад",
           "nextStepId": "welcome",
-          "type": "back"
+          "type": "button"
         }
       ]
     },
@@ -44,7 +44,7 @@
         {
           "text": "Отмена",
           "nextStepId": "welcome",
-          "type": "cancel"
+          "type": "button"
         }
       ]
     },
@@ -57,7 +57,7 @@
         {
           "text": "Закончить разговор",
           "nextStepId": "welcome",
-          "type": "end"
+          "type": "button"
         }
       ]
     }

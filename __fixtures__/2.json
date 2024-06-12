@@ -1,0 +1,31 @@
+[
+  {
+    "id": "welcome",
+    "messages": ["Добро пожаловать! Нажмите кнопку, чтобы начать."],
+    "buttons": [
+      {"text": "Начать", "nextStepId": "2", "type": "button"}
+    ]
+  },
+  {
+    "id": "2",
+    "messages": ["Вы на шаге 2. Выберите действие."],
+    "buttons": [
+      {"text": "Перейти на шаг 3", "nextStepId": "3", "type": "button"},
+      {"text": "Вернуться на шаг 1", "nextStepId": "welcome", "type": "button"},
+      {"text": "Петля на шаг 2", "nextStepId": "2", "type": "button"}
+    ]
+  },
+  {
+    "id": "3",
+    "messages": ["Вы на последнем шаге. Завершите или начните заново."],
+    "buttons": [
+      {"text": "Завершить", "nextStepId": "4", "type": "button"},
+      {"text": "Начать заново", "nextStepId": "welcome", "type": "button"}
+    ]
+  },
+  {
+    "id": "4",
+    "messages": ["Тест завершен. Нажмите, чтобы выйти."],
+    "buttons": []
+  }
+]

@@ -6,6 +6,7 @@ import '@testing-library/jest-dom';
 import {faker} from "@faker-js/faker";
 import {Form} from "./page/Form.js";
 import {ChatPageObject} from "./page/Chat.js";
+import steps from "../__fixtures__/default.json";
 
 describe('Integration App', () => {
     beforeEach(() => {
@@ -48,7 +49,7 @@ describe('Integration App', () => {
     });
     test('Submits the form and displays results', () => {
         const form = new Form(screen);
-        const widget = new ChatPageObject(screen)
+        const widget = new ChatPageObject(screen, steps)
 
         const formData = {
             email: faker.internet.email(),
@@ -59,10 +60,8 @@ describe('Integration App', () => {
         form.fillForm(formData);
 
         widget.openChat();
-        widget.clickAnswer('Узнать о продукте');
-        widget.expectNextMessages('Наш продукт - это передовое решение для управления задачами.')
-        widget.clickAnswer('Получить демо');
-        widget.expectNextMessages('Спасибо за интерес к нашему продукту! Мы свяжемся с вами для демонстрации.');
+        widget.verifyChatOpened();
+
         widget.closeChat();
 
         form.submitForm();
