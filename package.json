@@ -34,6 +34,7 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
+    "testEnvironmentOptions": {},
     "testMatch": ["**/__tests__/**/*.spec.js?(x)"],
     "extensionsToTreatAsEsm": [
       ".jsx"
