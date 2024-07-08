@@ -35,6 +35,7 @@ export default class ChatPageObject {
   }
 
   // Проверка функционала автоматического скролла к новому сообщению
+  // eslint-disable-next-line class-methods-use-this
   verifyAutoScroll() {
     expect(window.HTMLElement.prototype.scrollIntoView).toHaveBeenCalled();
   }
