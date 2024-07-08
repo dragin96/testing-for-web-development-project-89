@@ -1,5 +1,4 @@
 import { fireEvent } from '@testing-library/react';
-import { startButtonText } from '../utils/constants.js';
 
 export default class ChatPageObject {
   constructor(screen, steps) {
