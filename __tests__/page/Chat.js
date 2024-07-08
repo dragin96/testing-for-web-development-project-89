@@ -1,5 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 
+const startButtonText = 'Открыть Чат';
+
 export default class ChatPageObject {
   constructor(screen, steps) {
     this.screen = screen;

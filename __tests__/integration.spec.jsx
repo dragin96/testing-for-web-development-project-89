@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { faker } from '@faker-js/faker';
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 
 import App from '../src/App.jsx';
 import Form from './page/Form.js';
@@ -8,6 +10,7 @@ import ChatPageObject from './page/Chat.js';
 import steps from '../__fixtures__/default.json';
 
 const startButtonText = 'Открыть Чат';
+
 describe('Integration App', () => {
   beforeEach(() => {
     render(<App />);

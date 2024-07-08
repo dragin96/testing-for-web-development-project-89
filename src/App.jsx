@@ -1,51 +1,52 @@
-import { useState } from 'react';
-import Widget from "@hexlet/chatbot-v2";
-import steps from "../__fixtures__/default.json";
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
+import Widget from '@hexlet/chatbot-v2';
+import steps from '../__fixtures__/default.json';
 
 const App = () => {
-    const [form, setForm] = useState({
-        email: "",
-        password: "",
-        city: "",
-        country: "",
-        address: "",
-        acceptRules: false,
-    });
-    const [submittingState, setSubmittingState] = useState("fillingForm");
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+    city: '',
+    country: '',
+    address: '',
+    acceptRules: false,
+  });
+  const [submittingState, setSubmittingState] = useState('fillingForm');
 
-    const handleChangeField = ({ target }) => {
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        setForm({ ...form, [target.name]: value });
-    };
+  const handleChangeField = ({ target }) => {
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    setForm({ ...form, [target.name]: value });
+  };
 
-    const handleBackToForm = () => {
-        setSubmittingState("fillingForm");
-    };
+  const handleBackToForm = () => {
+    setSubmittingState('fillingForm');
+  };
 
-    const handleSubmitForm = (e) => {
-        e.preventDefault();
-        setSubmittingState("submitted");
-    };
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    setSubmittingState('submitted');
+  };
 
-    const enToRus = {
-        email: "Email",
-        password: "Пароль",
-        city: "Город",
-        country: "Страна",
-        address: "Адрес",
-        acceptRules: "Принять правила",
-    }
+  const enToRus = {
+    email: 'Email',
+    password: 'Пароль',
+    city: 'Город',
+    country: 'Страна',
+    address: 'Адрес',
+    acceptRules: 'Принять правила',
+  };
 
-    const renderRow = (key) => (
+  const renderRow = (key) => (
         <tr key={key}>
             <td>{enToRus[key]}</td>
             <td data-testid={`result_${key}`}>{form[key].toString()}</td>
         </tr>
-    );
+  );
 
-    const renderResult = () => {
-        const keys = Object.keys(form).sort();
-        return (
+  const renderResult = () => {
+    const keys = Object.keys(form).sort();
+    return (
             <div className="m-3">
                 <button
                     type="button"
@@ -58,10 +59,10 @@ const App = () => {
                     <tbody>{keys.map(renderRow)}</tbody>
                 </table>
             </div>
-        );
-    };
+    );
+  };
 
-    const renderForm = () => (
+  const renderForm = () => (
         <form data-testid={'myForm'} className="m-3" onSubmit={handleSubmitForm} name="myForm">
             <div className="col-md-6 mb-3">
                 <label htmlFor="email" className="col-form-label">
@@ -158,14 +159,14 @@ const App = () => {
                 Зарегистрироваться
             </button>
         </form>
-    );
+  );
 
-    return (
+  return (
         <>
-            {submittingState === "fillingForm" ? renderForm() : renderResult()}
+            {submittingState === 'fillingForm' ? renderForm() : renderResult()}
             {Widget(steps)}
         </>
-    );
+  );
 };
 
 export default App;
