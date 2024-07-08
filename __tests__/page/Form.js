@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-standalone-expect */
 import { fireEvent } from '@testing-library/react';
 
 export default class Form {
