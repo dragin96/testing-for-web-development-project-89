@@ -47,7 +47,8 @@
     ],
     "extensionsToTreatAsEsm": [
       ".jsx"
-    ]
+    ],
+    "reporters": [["github-actions", {"silent": false}], "summary"]
   },
   "babel": {
     "presets": [
