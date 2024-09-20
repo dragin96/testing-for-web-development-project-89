@@ -1,0 +1,17 @@
+name: main.yml
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install && jest
+      - uses: IgnusG/jest-report-action@v{ current version }
+        if: always()
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+

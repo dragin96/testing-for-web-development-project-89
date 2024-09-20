@@ -14,18 +14,25 @@ describe('Chat Widget Tests', () => {
     chatPage = new ChatPageObject(screen, steps);
   });
 
-  test('Handle loops and repeat messages', () => {
+  test('Handle loops and repeat messages', async () => {
+    await allure.description(
+        "This test attempts to log into the website using a login and a password. Fails if any error happens.\n\nNote that this test does not test 2-Factor Authentication.",
+    );
+
     const buttonToLoops = steps[1].buttons[2].text;
     const messagesLoopsStep = steps[1].messages[0];
-    chatPage.openChat();
-
-    chatPage.verifyChatOpened();
+    await allure.step('Открыть чат', async () => {
+      chatPage.openChat();
+    });
+    await allure.step('Проверяем, что чат открылся', async () => {
+      chatPage.verifyChatOpened();
+    });
     chatPage.clickAnswer(buttonStart);
     chatPage.expectNextMessages(messagesLoopsStep, 1);
     chatPage.clickAnswer(buttonToLoops);
     chatPage.expectNextMessages(messagesLoopsStep, 2);
     chatPage.clickAnswer(buttonToLoops);
-    chatPage.expectNextMessages(messagesLoopsStep, 3);
+    chatPage.expectNextMessages(messagesLoopsStep, 4);
   });
 
   test('Navigate through steps', () => {
